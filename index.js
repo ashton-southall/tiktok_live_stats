@@ -1,8 +1,8 @@
 // ########################
 // Tracker options
 // ########################
-const trackVideo = true;
-const trackProfile = false;
+const trackVideo = false;
+const trackProfile = true;
 const profileName = '@Adsnipers';
 const videoID = '6892220263971179777'
 
@@ -19,7 +19,8 @@ console.log(chalk.bgRed(`Make sure you have uncommented only one tracking featur
 
 async function getUserInfo() {
   console.clear()
-  console.log(chalk.inverse(`TikTok Live Updating Stats by @Adsnipers`))
+  console.log(chalk.inverse(`TikTok Live Updating Stats by Adsnipers`))
+  console.log(chalk.inverse(`Tracking ${profileName}`))
   const user = await tiktokApp.getUserByName(profileName); // Put your username here
   const userInfo = await tiktokApp.getUserInfo(user);
   console.log(chalk.bggreen(`Followers: ${userInfo.followerCount}`)) // Displays user follower count in green
@@ -28,7 +29,7 @@ async function getUserInfo() {
 
 async function getVideoInfo() {
   console.clear()
-  console.log(chalk.inverse(`TikTok Live Updating Stats by @Adsnipers`))
+  console.log(chalk.inverse(`TikTok Live Updating Stats by Adsnipers`))
   const video = tiktokApp.getVideo(videoID);
   const videoInfo = await tiktokApp.getVideoInfo(video);
   console.log(chalk.bgCyan(videoInfo.description))
@@ -41,10 +42,10 @@ async function getVideoInfo() {
 function run() {
   waitForTiktok().catch(error => console.log(chalk.bgRed(error)))
   if (trackProfile == true) {
-    getUserInfo().catch(error => console.log(chalk.bgRed(`Error while getting info, could be rate limited`)))
+    getUserInfo().catch(error => console.log(chalk.bgRed(`Please Wait`)))
   }
   if (trackVideo == true) {
-    getVideoInfo().catch(error => console.log(chalk.bgRed(error + ' | Probably being rate limited')))
+    getVideoInfo().catch(error => console.log(chalk.bgRed('Please Wait')))
   }
   setTimeout(run, 50000)
 }
