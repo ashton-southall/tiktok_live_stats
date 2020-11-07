@@ -6,7 +6,7 @@ async function waitForTiktok() {
   tiktokApp = await tiktok();
 }
 
-console.log(chalk.bgRed(`Please make sure only one tracking task is uncommented, running two will cause serious rate limits and could make the script unusable`))
+console.log(chalk.bgRed(`Make sure you have uncommented only one tracking feature, you can locate them at the bottom of the script, if none are uncommented this script wont work`))
 
 async function getUserInfo() {
   console.clear()
@@ -20,7 +20,7 @@ async function getUserInfo() {
 async function getVideoInfo() {
   console.clear()
   console.log(chalk.inverse(`TikTok Live Updating Stats by @Adsnipers`))
-  const video = tiktokApp.getVideo('6891996320807128321');
+  const video = tiktokApp.getVideo('6892220263971179777');
   const videoInfo = await tiktokApp.getVideoInfo(video);
   console.log(chalk.bgCyan(videoInfo.description))
   console.log(chalk.bgCyan(`Views: ${videoInfo.playCount}`))
@@ -31,7 +31,7 @@ async function getVideoInfo() {
 
 function run() {
   waitForTiktok().catch(error => console.log(chalk.bgRed(error)))
-  //getUserInfo().catch(error => console.log(chalk.bgRed(`Error while getting info, could be rate limited`)))
+  getUserInfo().catch(error => console.log(chalk.bgRed(`Error while getting info, could be rate limited`)))
   //getVideoInfo().catch(error => console.log(chalk.bgRed(error + ' | Probably being rate limited')))
   setTimeout(run, 50000)
 }
