@@ -5,7 +5,8 @@
 - Download or clone this repository
 - Open command prompt, ensure you have NodeJS installed
 - Via command prompt navigate to the downloaded folder using `cd` (change directory) and `ls` (list)
-- open index.js in your favorite code editor (or notepad) and uncomment one of the two trackers, one tracks your profile and the other tracks a video of your choosing. you can only select one as selecting more than one will cause severe rate limiting from TikTok
+- open index.js in your favorite code editor (or notepad) and change the options on the first few lines, I would recommend only tracking either a profile or video and not both as TikTok has some pretty harsh rate limiting
+[Options] (https://github.com/Adsnipers/tiktok_live_stats/images/optionsExample.png)
 - run the command `npm start` in CMD (make sure you're in the correct directory or it wont work)
 ## Want to improve on the program?
 - Fork this repository and make any changed you wish
