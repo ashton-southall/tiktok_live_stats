@@ -12,7 +12,7 @@ function getUserInfo() {
         console.log(chalk.green(`Followers: ${userInfo.followerCount}`)) // Displays user follower count in green
         console.log(chalk.cyan(`Likes: ${userInfo.likeCount}`)) // Displays user follower count in cyan
         
-      })().catch(error => console.log(`Check failed, probably being rate limited`)); // Show this if an error occurrs, this is most likely due to rate limiting by TikTok but always double check the username is correct
+      })().catch(error => console.error));
       setTimeout(getUserInfo, 300000) // Wait 5 minutes between requests, this is to help prevent rate limiting
 }
 getUserInfo()
