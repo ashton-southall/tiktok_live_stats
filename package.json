@@ -24,6 +24,6 @@
   "homepage": "https://github.com/Adsnipers/tiktok_live_updating_Stats#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "tiktok-app-api": "^1.3.0"
+    "tiktok-app-api": "^1.4.0"
   }
 }
